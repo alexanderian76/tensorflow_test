@@ -46,7 +46,10 @@ model.summary()
 # Train the model
 history = model.fit(X, y, epochs=10, batch_size=32, validation_split=0)
 
-s = tokenizer.texts_to_sequences(["The worst movie I've been watching ever! Actors are fcing silly"])
+model.save("./test_model.keras")
+#tf.keras.models.save_model()
+
+s = tokenizer.texts_to_sequences(["Watch this, it is not waste of time"])
 p = pad_sequences(s, maxlen=max_length, padding='post')
 
 # Evaluate the model on the test data
